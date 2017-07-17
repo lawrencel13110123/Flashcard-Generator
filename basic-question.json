@@ -1,0 +1,16 @@
+[
+	{ 
+		"front": "Who is the first President of United States", 
+	  	"back": "george washington" 
+	}, 
+
+	{
+		"front": "Who founded Microsoft?", 
+	  	"back": "bill gates" 	
+	}, 
+	{
+		"front": "Which year did the Opium War start?", 
+	  	"back": "1839" 	
+	} 
+
+]

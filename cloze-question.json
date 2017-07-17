@@ -1,0 +1,15 @@
+[
+	{ 
+		"text": "george washington is the first President of United States", 
+	  	"cloze": "george washington" 
+	}, 
+
+	{
+		"text": "bill gates founded Microsoft", 
+	  	"cloze": "bill gates" 	
+	}, 
+	{
+		"text": "1839 is the year the Opium War started", 
+	  	"cloze": "1839" 	
+	} 
+]

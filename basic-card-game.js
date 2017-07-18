@@ -15,59 +15,60 @@ for (var i = 0 ; i < questions.length ; i++) {
 }
 
 
-// function addQuestions () {
-// 	inquirer.prompt([
-// 		{
-// 			type: "list",
-// 			name: "add",
-// 			message: "Do you want to add your own questions?",
-// 			choices: ["YES", "NO"]
-// 		}
-// 	]).then(function(response) {
-// 		if (response.add === "YES") {
-// 			inquirer.prompt([
-// 				{
-// 					type: "input",
-// 					name: "newQuestion",
-// 					message: "Type your new question here!",
-// 					validate: function(value) {
-// 						if (value === "") {
-// 							console.log("please enter a question")
-// 							return
-// 						}
-// 					}
-// 				},
-// 				{
-// 					type: "input",
-// 					name: "newAnswer",
-// 					message: "Type the answer to your question here!",
-// 					validate: function(value) {
-// 						if (value === "") {
-// 							console.log("please enter a question")
-// 							return
-// 						}
-// 					}
-// 				}
-// 			]).then(function(response) {
-// 				var newCards = new basicCard(response.newQuestion, response.newAnswer)
-// 				questionsList.push(newCards)
-// 				fs.writeFile("basic-question.json", questionsList, function(err) {
-// 					if (err) {
-// 						console.log(err)
-// 					}
-// 						console.log("questions updated")
-// 						inquiry()
-// 				})
+function addQuestions () {
+	inquirer.prompt([
+		{
+			type: "list",
+			name: "add",
+			message: "Do you want to add your own questions?",
+			choices: ["YES", "NO"]
+		}
+	]).then(function(response) {
+		if (response.add === "YES") {
+			inquirer.prompt([
+				{
+					type: "input",
+					name: "newQuestion",
+					message: "Type your new question here!",
+					// validate: function(value) {
+					// 	if (value === "") {
+					// 		console.log("please enter a question")
+					// 		return
+					// 	}
+					// }
+				},
+				{
+					type: "input",
+					name: "newAnswer",
+					message: "Type the answer to your question here!",
+					// validate: function(value) {
+					// 	if (value === "") {
+					// 		console.log("please enter a question")
+					// 		return
+					// 	}
+					// }
+				}
+			]).then(function(response) {
+				var newCards = new basicCard(response.newQuestion, response.newAnswer.toLowerCase())
+				questionsList.push(newCards)
+				console.log(questionsList)
+				// fs.writeFile("basic-question.json", questionsList, function(err) {
+				// 	if (err) {
+				// 		console.log(err)
+				// 	}
+				// 		console.log("questions updated")
+						inquiry()
+				// })
 
 
-// 			});
-// 		}
-// 		else {
-// 			console.log("ok no problem!")
-// 			inquiry()
-// 		}
-// 	}); 
-// }
+			});
+		}
+		else {
+			console.log("ok no problem!")
+			inquiry()
+		}
+	}); 
+}
 
 
 function replay () {
@@ -84,8 +85,8 @@ function replay () {
 			correct = 0 
 			incorrect = 0
 			number = 0
-			// addQuestions()
-			inquiry()
+			addQuestions()
+			// inquiry()
 		}
 		else {
 			console.log("See you next time!") 
